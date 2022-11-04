@@ -1,0 +1,12 @@
+com\ateam\UserDB.class
+com\ateam\User.class
+com\ateam\Server.class
+com\ateam\ChatRoom.class
+com\ateam\Badwords.class
+com\ateam\Server$1.class
+com\ateam\UserBannedException.class
+com\ateam\App.class
+com\ateam\ClientHandlerException.class
+com\ateam\Command.class
+com\ateam\UserAuth.class
+com\ateam\ClientHandler.class
