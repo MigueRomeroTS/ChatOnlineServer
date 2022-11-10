@@ -279,7 +279,7 @@ public class Server {
     }
 
     public String filterBadword(String message, ClientHandler client){
-        String[] words = message.split("\\W+");
+        String[] words = message.split("\\s+");
         String filteredMessage = "";
 
         for (String word : words) {
