@@ -1,0 +1,5 @@
+com\ateam\ServerTest.class
+com\ateam\UserTest.class
+com\ateam\UserDBTest.class
+com\ateam\AppTest.class
+com\ateam\ClientHandlerTest.class

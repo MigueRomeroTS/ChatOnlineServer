@@ -10,7 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Badwords {
-    static final String BADWORDS_FILEPATH = "./db/miccionario.txt";
+    static final String BADWORDS_FILEPATH = "../db/miccionario.txt";
     private HashSet<String> badwordsList;
     private static final Logger LOGGER = Logger.getLogger("Badwords");
 

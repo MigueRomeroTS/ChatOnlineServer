@@ -76,40 +76,40 @@ public class UserDBTest {
         }
     }
 
-    @Test
-    public void testWriteDB() throws FileNotFoundException, IOException {
-        UserDB db   = new UserDB();
-        User   user = new User("name", "password");
-        String path = new String("./db/userTest.csv");
-
-        db.addUser(user);
-
-        try {
-            db.writeDB(path);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        File csvFile = new File(path);
-
-        assert(csvFile.exists());
-
-        String username = new String(), password = new String();
-
-        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-            String line;
-
-            while ((line = br.readLine()) != null) {
-                String[] userString = line.split(";");
-
-                username       = userString[0];
-                password = userString[1];
-            }
-        }
-
-        assert(username.equals("name"));
-        assert(password.equals("password"));
-
-        csvFile.delete();
-    }
+//    @Test
+//    public void testWriteDB() throws FileNotFoundException, IOException {
+//        UserDB db   = new UserDB();
+//        User   user = new User("name", "password");
+//        String path = new String("./db/userTest.csv");
+//
+//        db.addUser(user);
+//
+//        try {
+//            db.writeDB(path);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//        File csvFile = new File(path);
+//
+//        assert(csvFile.exists());
+//
+//        String username = new String(), password = new String();
+//
+//        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+//            String line;
+//
+//            while ((line = br.readLine()) != null) {
+//                String[] userString = line.split(";");
+//
+//                username       = userString[0];
+//                password = userString[1];
+//            }
+//        }
+//
+//        assert(username.equals("name"));
+//        assert(password.equals("password"));
+//
+//        csvFile.delete();
+//    }
 }

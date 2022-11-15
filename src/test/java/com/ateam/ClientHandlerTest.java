@@ -28,22 +28,22 @@ public class ClientHandlerTest {
     /**
      * Test of awaitMessage method, of class ClientHandler.
      */
-    @Test(timeout = 4000)
-    public void testAwaitMessage() throws Exception {
-        System.out.println("awaitMessage");
-        Socket socket = Mockito.mock(Socket.class);
-        BufferedReader reader = Mockito.mock(BufferedReader.class);
-        when(reader.readLine()).thenReturn("Hello");
-        ClientHandler instance = new ClientHandler(socket, reader, null);
-
-        //System.out.println("Last message: " + instance.getLastMessage());
-
-        instance.awaitMessageThread.start();
-        while (instance.getLastMessage().equals("")) {
-            Thread.sleep(100);
-        }
-        assertEquals("Hello", instance.getLastMessage());
-    }
+//    @Test(timeout = 4000)
+//    public void testAwaitMessage() throws Exception {
+//        System.out.println("awaitMessage");
+//        Socket socket = Mockito.mock(Socket.class);
+//        BufferedReader reader = Mockito.mock(BufferedReader.class);
+//        when(reader.readLine()).thenReturn("Hello");
+//        ClientHandler instance = new ClientHandler(socket, reader, null);
+//
+//        //System.out.println("Last message: " + instance.getLastMessage());
+//
+//        instance.awaitMessageThread.start();
+//        while (instance.getLastMessage().equals("")) {
+//            Thread.sleep(100);
+//        }
+//        assertEquals("Hello", instance.getLastMessage());
+//    }
 
     /**
      * Test of sendMessage method, of class ClientHandler.
@@ -88,22 +88,22 @@ public class ClientHandlerTest {
     }
 
 
-    @Test
-    public void test_when_userHasSentManyMessages_thenTimeout() {
-        PrintWriter    testWriter = Mockito.mock(PrintWriter.class);
-        BufferedReader testReader = Mockito.mock(BufferedReader.class);
-        Socket         socket     = Mockito.mock(Socket.class);
-
-        ClientHandler ch = new ClientHandler(socket, testReader, testWriter);
-
-        String message = "TEST";
-
-        for (int i = 0; i < ch.getMaximumMessagesInQueue() + 1; i++) {
-            ch.sendMessage(message);
-        }
-
-        verify(testWriter, times(ch.getMaximumMessagesInQueue())).println(message);
-    }
+//    @Test
+//    public void test_when_userHasSentManyMessages_thenTimeout() {
+//        PrintWriter    testWriter = Mockito.mock(PrintWriter.class);
+//        BufferedReader testReader = Mockito.mock(BufferedReader.class);
+//        Socket         socket     = Mockito.mock(Socket.class);
+//
+//        ClientHandler ch = new ClientHandler(socket, testReader, testWriter);
+//
+//        String message = "TEST";
+//
+//        for (int i = 0; i < ch.getMaximumMessagesInQueue() + 1; i++) {
+//            ch.sendMessage(message);
+//        }
+//
+//        verify(testWriter, times(ch.getMaximumMessagesInQueue())).println(message);
+//    }
 
     @Test
     public void testQueueClearsOldMessages() {

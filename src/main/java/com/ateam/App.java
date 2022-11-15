@@ -1,5 +1,6 @@
 package com.ateam;
 
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -17,13 +18,13 @@ public class App
      */
     public static void main( String[] args )
     {
-        var server = new Server();
-
-        try {
-            server.run();
-        }
-        catch (Exception e) {
-            LOGGER.log(Level.SEVERE, e.toString(), e);
-        }
-    }
-}
+                var server = new Server();
+                
+                try {
+                    server.run();
+                }
+                catch (Exception e) {
+                    LOGGER.log(Level.SEVERE, e.toString(), e);
+                }
+            }
+            }
